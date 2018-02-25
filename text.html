@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>tab</title>
+
+</head>
+
+<body>
+    <script>
+        //输出2的n次幂
+        function n() {
+            var p=parseInt(window.prompt("输出2的n次幂"));
+            var num = 2;
+            if (Math.floor(p)) {
+                document.write("输出2的" + p + "n次幂:"+Math.pow(num, p) + " <br/> ");
+            }
+            else {
+                alert("qing shu ru ziranghu");
+            }
+        }
+
+        ///输出n的阶乘
+        function jc() {
+            var n=parseInt(window.prompt("输出n的阶乘"));
+            var c=n;
+            var nu = 1;
+            if (Math.floor(n)) {
+                for (; n > 0; n--) {
+                    nu = nu * n;
+                }
+                document.write("输出" + c + "的阶乘:" + nu+ " <br/> ");
+            }
+            else {
+                alert("请输入数字！");
+            }
+        }
+        //斐波那契输出第n项
+        function fz(n) {
+            var n=parseInt(window.prompt("斐波那契输出第n项"));
+            if (Math.floor(n)) {
+                var fz = [];
+                for (i = 0; i < n; i++) {
+                    if (i < 2) {
+                        fz.push(1);
+                    } else {
+                        fz[i] = fz[i - 1] + fz[i - 2];
+                    }
+                }
+                document.write("斐波那契输出第" + n + "项:" + fz[n - 1] + "<br/>");
+            }
+        }
+        //把三位数倒过来输出
+        function zzs(n) {
+            var b, s, g = "";
+            if (Math.floor(n) >= 100 && Math.floor(n) < 1000) {
+                b = parseInt(n / 100);
+                s = parseInt((n % 100) / 10);
+                g = (n % 100) % 10;
+            }
+            document.write("nchu:" + n + "nhou" + g + s + b + "<br/>");
+        }
+        //把三位数倒过来输出
+
+        function ff(n) {
+            var str = new String(n);
+            if (Math.floor(n) >= 100 && Math.floor(n) < 1000) {
+                document.write(str.charAt(2) + str.charAt(1) + str.charAt(0) + "<br/>");
+            }
+        }
+        //输出三个数的最大数
+        function maxa(a, b, c) {
+            if (typeof a === "number" && typeof b === "number" && typeof c === "number") {
+                var d = Math.max(a, b);
+                d = Math.max(d, c);
+                document.write("start:" + a + b + c + "end:" + d + "<br/>");
+            }
+        }
+        //打印100以内的质数
+        function zhishu(){
+            var result="";
+            for(i=2;i<101;i++){
+                var count=0;
+                for(j=1;j<i+1;j++){
+                    if(i%j==0){
+                        count+=1;
+                    }
+                }
+                if(count<3){
+                    result=result+i+" ";
+                }
+            }
+            document.write(result);
+        }
+
+
+        //输出三个数的最大数
+        maxa(3, 3, 2);
+
+        //把三位数倒过来输出
+        ff(235); 
+        zzs(456);
+
+        //输出2的n次幂
+        n();
+
+        //输出n的阶乘
+        jc(2);
+
+        //斐波那契输出第n项
+        fz(8);
+
+        //打印100以内的质数
+        zhishu();
+
+    </script>
+</body>
+
+</html>

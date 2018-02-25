@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit" />
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="format-detection" content="telephone = no" />
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>个人中心</title>
+    <link href="css/css_style.css" rel="stylesheet" />
+    <script src="js/initialize.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="back_a_icon"><i class="back_icon"></i></a>
+        <h2>个人中心</h2>
+        <a href="#" class="more_a_icon"><i class="more_icon"></i></a>
+    </div>
+    <div class="member_autor">
+        <span><img src="images/temp/p3.jpg" /></span>
+        <h2>B-LD</h2>
+    </div>
+    <div class="member_menu">
+        <span><a href="myorder.html"><i class="pendingPlay_icon"></i><label>待付款</label><em>2</em></a></span>
+        <span><a href="myorder.html"><i class="inbound_icon"></i><label>待收货</label></a></span>
+        <span><a href="myorder.html"><i class="comment_icon"></i><label>待评价</label></a></span>
+        <span><a href="myorder.html"><i class="aftermarket_icon"></i><label>售后</label></a></span>
+    </div>
+    <ul class="menu_list">
+        <li>
+            <a href="coupon.html">
+                <i class="coupon_icon"></i>
+                <span>我的优惠码</span>
+                <i class="right_icon"></i>
+                <label>10张</label>
+            </a>
+        </li>
+        <li>
+            <a href="bind.html">
+                <i class="phone_icon"></i>
+                <span>绑定手机</span>
+                <i class="right_icon"></i>
+                <label>未绑定</label>
+            </a>
+        </li>
+    </ul>
+    <div class="footer_space"></div>
+    <div class="footer">
+        <span>
+            <a href="index.html"><i class="m1_icon"></i><label>商城</label></a>
+        </span>
+        <span>
+            <a href="advisory.html"><i class="m2_icon"></i><label>咨询</label><em>6</em></a>
+        </span>
+        <span>
+            <a href="cart.html"><i class="m3_icon"></i><label>购物车</label><em>61</em></a>
+        </span>
+        <span>
+            <a href="member.html"><i class="m4_icon"></i><label>我</label></a>
+        </span>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        TouchSlide({
+            slideCell: "#bannerBox",
+            titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell: ".bd ul",
+            effect: "left",
+            autoPage: true,//自动分页
+            autoPlay: false //自动播放
+        });
+    });
+
+</script>

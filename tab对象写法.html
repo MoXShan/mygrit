@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>tab</title>
+    <style>
+        #div1 div {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+            display: none;
+        }
+
+        .active {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <input type="button" value="1" class="active">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <div style="display:block;">
+            11111
+        </div>
+        <div>22222</div>
+        <div>3333</div>
+    </div>
+    <script>
+        window.onload = function () {
+/*             var oDiv1 = document.getElementById("div1");
+            var oinput = oDiv1.getElementsByTagName("input");
+            var divs = oDiv1.getElementsByTagName("div");
+            for (var i = 0; i < oinput.length; i++) {
+                oinput[i].index = i;
+                oinput[i].onclick = function () {
+                    for (var i = 0; i < oinput.length; i++) {
+                        oinput[i].className = " ";
+                        divs[i].style.display = "none";
+                    }
+                    this.className = "active";
+                    divs[this.index].style.display = "block";
+                }
+            } */
+            var t=new Tab();
+        
+        }
+        function Tab() {
+            this.oDiv1 = document.getElementById("div1");
+            this.oinput = this.oDiv1.getElementsByTagName("input");
+            this.divs = this.oDiv1.getElementsByTagName("div");
+            this.init();
+        }
+        Tab.prototype.init = function () {
+            var that=this;
+            for (var i = 0; i < this.oinput.length; i++) {
+                this.oinput[i].index = i;
+                this.oinput[i].onclick = function () {
+                    that.change(this);
+                }
+            }
+        }
+
+        Tab.prototype.change = function (obj) {
+            for (var i = 0; i < this.oinput.length; i++) {
+                this.oinput[i].className = " ";
+                this.divs[i].style.display = "none";
+            }
+            obj.className = "active";
+            this.divs[obj.index].style.display = "block";
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html manifest="offline.appcache">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>跨源通信</title>
+</head>
+<body>
+    <textarea id="cont" cols="10"></textarea>
+    <script type="text/javascript">
+        var el = document.querySelector("#cont");
+        el.addEventListener("blur", function () {
+            var data = el.value;
+            if (navigator) {
+                saveOnline(data);
+            }
+            else {
+                localStorage.setItem('data', data);
+            }
+        });
+        window.ononline = function () {
+            var data = localStorage.getItem('data');
+            if (!!data) {
+                saveOnline(data);
+                localStorage.removeItem('data');
+            }
+        }
+
+        window.sessionStorage.setItem("name", "ton");
+        window.localStorage.setItem("age", "12");
+
+
+        function saveOnline(data) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('post', '/savedata');
+            xhr.send("data=" + data);
+        }
+    </script>
+</body>
+</html>
